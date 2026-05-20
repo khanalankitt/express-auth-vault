@@ -1,18 +1,29 @@
 {
   "name": "express-auth-vault",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --watch src --ext ts --exec ts-node -r tsconfig-paths/register src/app.ts",
+    "dev": "nodemon --watch src --ext ts --exec ts-node -r tsconfig-paths/register src/server.ts",
     "build": "tsc",
-    "start": "node -r tsconfig-paths/register dist/app.js"
+    "start": "node -r tsconfig-paths/register dist/server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "express",
+    "typescript",
+    "prisma",
+    "postgresql",
+    "auth",
+    "authentication",
+    "jwt",
+    "refresh-tokens",
+    "bcrypt"
+  ],
+  "author": "Ankit Khanal",
   "license": "ISC",
-  "description": "",
+  "description": "Production-grade Express + TypeScript + Prisma authentication API with rotating refresh tokens, reuse detection, and a global error handler.",
   "dependencies": {
+    "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
@@ -23,7 +34,7 @@
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.3",
     "nodemailer": "^8.0.7",
-    "uuid": "^14.0.0"
+    "pg": "^8.21.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
@@ -33,7 +44,7 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.9.0",
     "@types/nodemailer": "^8.0.0",
-    "@types/uuid": "^10.0.0",
+    "@types/pg": "^8.20.0",
     "nodemon": "^3.1.14",
     "prisma": "^7.8.0",
     "ts-node": "^10.9.2",
